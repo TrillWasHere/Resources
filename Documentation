@@ -1,0 +1,61 @@
+-- // Documentation for FluxLib
+
+Creating a Window:
+ local x = UI_Lib:Window("Window")
+ 
+Creating a tab: 
+ local y = x:Section("Tab 1")
+ 
+Creating a slider:
+ y:Slider("Slider", function(Value)
+
+ end, {Min = 0, Max = 100, Default = 50, Rainbow = true})
+ 
+Creating a dropdown:
+ y:Dropdown("This is a dropdown.", function(Value)
+
+ end, {"Selection 1", "Selection 2", "Selection 3"})
+ 
+Creating a button:
+ y:Button("This is a button.", function()
+
+ end)
+ 
+Creating a toggle:
+ y:Toggle("This is a toggle.", function(State)
+
+ end, false)
+ 
+Creating a label:
+ y:Label("This is a label.")
+ 
+Creating a keybind:
+ y:KeyBind("This is a keybind.", function(State)
+          UI_Lib:Toggle()
+end, Enum.KeyCode.P)
+
+-- // Example
+local x = UI_Lib:Window("Title")
+local y = x:Section("Tab 1")
+
+y:Slider("Slider", function(Value)
+
+end, {Min = 0, Max = 100, Default = 50, Rainbow = false})
+
+y:Dropdown("This is a dropdown.", function(Value)
+
+end, {"Selection 1", "Selection 2", "Selection 3"})
+
+y:Button("This is a button.", function()
+print("Button clicked")
+end)
+
+y:Toggle("This is a toggle.", function(State)
+print("Toggled")
+end, false)
+
+y:Label("This is a label")
+
+y:KeyBind("Toggle UI", function(State)
+          UI_Lib:Toggle()
+end, Enum.KeyCode.P)
