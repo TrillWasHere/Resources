@@ -35,6 +35,7 @@ Creating a keybind:
 end, Enum.KeyCode.P)
 
 -- // Example
+local UI_Lib = loadstring(game:HttpGet("http://fluxus.vip/script", true))()
 local x = UI_Lib:Window("Title")
 local y = x:Section("Tab 1")
 
